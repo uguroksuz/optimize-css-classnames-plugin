@@ -1,0 +1,25 @@
+{
+    "name": "optimize-css-classnames-plugin",
+    "version": "0.0.1",
+    "description": "Optmize CSS class names :: Webpack Plugin",
+    "keywords": [
+        "optimize",
+        "css",
+        "clasnames"
+    ],
+    "license": "MIT",
+    "main": "./src/index.js",
+    "homepage": "https://github.com/vreshch/optimize-css-classnames-plugin",
+    "author": {
+        "name": "Volodymyr Vreshch",
+        "email": "<vreshch@gmail.com>"
+    },
+    "repository": "git@github.com:vreshch/optimize-css-classnames-plugin.git",
+    "bugs": {
+        "url": "https://github.com/vreshch/optimize-css-classnames-plugin/issues"
+    },
+    "scripts": {
+    },
+    "dependencies": {
+    }
+}
