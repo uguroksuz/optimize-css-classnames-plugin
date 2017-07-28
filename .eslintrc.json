@@ -1,0 +1,16 @@
+{
+    "plugins": ["jasmine", "node"],
+    "extends" : [
+      "eslint:recommended",
+      "plugin:node/recommended",
+      "plugin:jasmine/recommended"
+    ],
+    "rules": {
+        "quotes": [ 2, "double"],
+        "node/no-unpublished-require": 0
+    },
+    "env": {
+      "node": true,
+      "jasmine": true
+    }
+}

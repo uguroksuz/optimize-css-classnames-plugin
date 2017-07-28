@@ -19,7 +19,27 @@
         "url": "https://github.com/vreshch/optimize-css-classnames-plugin/issues"
     },
     "scripts": {
+        "test": "jasmine-node src/**.spec.js",
+        "tdd": "jasmine-node src/**.spec.js --autotest --watch src --color",
+        "coverage": "istanbul cover --include-all-sources -x 'src/**.spec**' jasmine-node src/**.spec.js",
+
+        "lint": "npm run verify",
+        "verify": "eslint src --ext .js",
+        "lintfix": "eslint src --ext .js --fix"
     },
     "dependencies": {
+    },
+    "devDependencies": {
+        "eslint": "4.3.0",
+        "eslint-plugin-import": "2.7.0",
+        "eslint-plugin-jasmine": "2.8.0",
+        "eslint-plugin-node": "5.1.1",
+        "eslint-plugin-promise": "3.5.0",
+        "eslint-plugin-standard": "3.0.1",
+        "istanbul": "0.4.5",
+        "jasmine": "2.6.0",
+        "jasmine-node": "1.14.5",
+        "codecov": "2.1.0",
+        "proxyquire": "1.8.0"
     }
 }
