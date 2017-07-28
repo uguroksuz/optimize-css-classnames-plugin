@@ -26,10 +26,10 @@ TO :
 
 ## The plugin work together with other loaders:
 
-* (optimize-css-classnames-html)[https://github.com/vreshch/optimize-css-classnames-html]
-* (optimize-css-classnames-angularjs) [https://github.com/vreshch/optimize-css-classnames-angularjs]
+* [optimize-css-classnames-html] (https://github.com/vreshch/optimize-css-classnames-html)
+* [optimize-css-classnames-angularjs] (https://github.com/vreshch/optimize-css-classnames-angularjs)
 
-## Example of Setup for Jquery:
+## Webpack configuration example (for Jquery):
 
 ```js
 const OptimizeCSSClassnamesPlugin = require('optimize-css-classnames-plugin');
