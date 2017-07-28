@@ -25,7 +25,9 @@
 
         "lint": "npm run verify",
         "verify": "eslint src --ext .js",
-        "lintfix": "eslint src --ext .js --fix"
+        "lintfix": "eslint src --ext .js --fix",
+
+        "codecov": "codecov -t 86d374ad-07e0-41e3-8779-b73577f9f2d5 < coverage/lcov.info"
     },
     "dependencies": {
     },

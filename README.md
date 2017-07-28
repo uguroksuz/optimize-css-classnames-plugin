@@ -1,5 +1,9 @@
 # Optimize CSS Classnames :: UNDER DEVELOPMENT
 
+[![codecov](https://codecov.io/gh/vreshch/optimize-css-classnames-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/vreshch/optimize-css-classnames-plugin)
+[![Build Status](https://travis-ci.org/vreshch/optimize-css-classnames-plugin.svg?branch=master)](https://travis-ci.org/vreshch/optimize-css-classnames-plugin)
+
+
 Webpack plugin: Optimize css class names:
 
 Minimize CSS class names and give minimization up to 70% for css files
@@ -56,4 +60,3 @@ module.exports = {
 ## Configuration Examples:
 * [Jquery](https://github.com/vreshch/optimize-css-classnames-examples/tree/master/1)
 * [Angular 1.5](https://github.com/vreshch/optimize-css-classnames-examples/tree/master/2)
-
