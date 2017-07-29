@@ -27,7 +27,7 @@ OptimizeCssClassnamesPlugin.prototype.apply = function(compiler) {
                     var source = asset.source();
                     var css = transformCSS(source);
 
-                    let out = new RawSource(css);
+                    var out = new RawSource(css);
                     compilation.assets[file] = out;
                 }
             });
