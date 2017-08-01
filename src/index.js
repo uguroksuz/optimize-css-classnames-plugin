@@ -65,7 +65,7 @@ OptimizeCssClassnamesPlugin.prototype.transformCSS = function(source) {
 };
 
 function isCSSFile(fileName) {
-    return !!((fileName || '').match(/\.css$/));
-};
+    return !!((fileName || "").match(/\.css$/));
+}
 
 module.exports = OptimizeCssClassnamesPlugin;
