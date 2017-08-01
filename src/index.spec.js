@@ -4,9 +4,7 @@ describe("OptimizeCssClassnamesPlugin", () => {
     var sut, OptimizeCssClassnamesPlugin, mockOptions;
 
     beforeEach(() => {
-        OptimizeCssClassnamesPlugin = proxyquire("./index", {
-            "webpack-sources/lib/RawSource": function (source) { this.source = source; }
-        });
+        OptimizeCssClassnamesPlugin = proxyquire("./index", {});
         mockOptions = {};
         sut = new OptimizeCssClassnamesPlugin(mockOptions);
     });
@@ -146,9 +144,9 @@ expect(sut.getNewClassName).toBeDefined();
                         return styleString;
                     }
                 };
-                mockCompilationFn.call({transformCSS: mockTransformCSS}, mockAssets, ()=>{});
 
-                expect(mockCompilation.assets[cssFileName].source).toEqual("-=css=-");
+                mockCompilationFn.call({transformCSS: mockTransformCSS}, mockAssets, ()=>{});
+                expect(mockCompilation.assets[cssFileName].source()).toEqual("-=css=-");
             });
         });
     });

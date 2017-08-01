@@ -22,9 +22,9 @@
     },
 
     "scripts": {
-        "test": "jasmine-node src/**.spec.js",
-        "tdd": "jasmine-node src/**.spec.js --autotest --watch src --color",
-        "coverage": "istanbul cover --include-all-sources -x 'src/**.spec**' jasmine-node src/**.spec.js",
+        "test": "jasmine-node src/index.spec.js",
+        "tdd": "jasmine-node src/index.spec.js --autotest --watch src --color",
+        "coverage": "istanbul cover --include-all-sources -x 'src/**.spec**' jasmine-node src/index.spec.js",
 
         "lint": "npm run verify",
         "verify": "eslint src --ext .js",
