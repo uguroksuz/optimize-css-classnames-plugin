@@ -4,7 +4,7 @@ describe("OptimizeCssClassnamesPlugin", () => {
     var sut, OptimizeCssClassnamesPlugin, mockOptions;
 
     beforeEach(() => {
-        OptimizeCssClassnamesPlugin = proxyquire("./index", {});
+        OptimizeCssClassnamesPlugin = require("./index");
         mockOptions = {};
         sut = new OptimizeCssClassnamesPlugin(mockOptions);
     });
