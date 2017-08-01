@@ -1,5 +1,3 @@
-var proxyquire = require("proxyquire");
-
 describe("OptimizeCssClassnamesPlugin", () => {
     var sut, OptimizeCssClassnamesPlugin, mockOptions;
 
@@ -122,7 +120,7 @@ expect(sut.getNewClassName).toBeDefined();
             expect(doneFn).toHaveBeenCalledWith();
         });
 
-        describe("css transformation", ()=> {
+        describe("css transformation", () => {
             var mockTransformCSS;
 
             beforeEach(() => {
@@ -146,7 +144,8 @@ expect(sut.getNewClassName).toBeDefined();
                 };
 
                 mockCompilationFn.call({transformCSS: mockTransformCSS}, mockAssets, ()=>{});
-                expect(mockCompilation.assets[cssFileName].source()).toEqual("-=css=-");
+                
+expect(mockCompilation.assets[cssFileName].source()).toEqual("-=css=-");
             });
         });
     });

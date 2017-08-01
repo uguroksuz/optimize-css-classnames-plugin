@@ -62,6 +62,10 @@ OptimizeCssClassnamesPlugin.prototype.transformCSS = function(source) {
     });
 
     return csstree.translate(ast);
-}
+};
+
+
+
+
 
 module.exports = OptimizeCssClassnamesPlugin;
