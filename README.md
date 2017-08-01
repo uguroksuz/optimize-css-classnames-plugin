@@ -1,4 +1,4 @@
-# Optimize CSS Classnames :: UNDER DEVELOPMENT
+# Optimize CSS Classnames
 
 [![codecov](https://codecov.io/gh/vreshch/optimize-css-classnames-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/vreshch/optimize-css-classnames-plugin)
 [![Build Status](https://travis-ci.org/vreshch/optimize-css-classnames-plugin.svg?branch=master)](https://travis-ci.org/vreshch/optimize-css-classnames-plugin)
@@ -41,17 +41,25 @@ const OptimizeCSSClassnamesPlugin = require('optimize-css-classnames-plugin');
 module.exports = {
     module: {
         rules: [{
+            test: /\.css$/,
+            use: ExtractTextPlugin.extract({
+                fallback: "style-loader",
+                use: "css-loader"
+            })
+       },
+       {
             test: /\.(html)$/,
             use: [{
                 loader: 'html-loader'
             }, {
                 loader: 'optimize-css-classnames-html'
             }]
-        }]
+       }]
     },
     plugins: [
+        new ExtractTextPlugin("styles.css"),
         new OptimizeCSSClassnamesPlugin({
-            removeUnused: true
+            prefix: '_'
         })
     ]
 }
