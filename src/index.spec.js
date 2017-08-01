@@ -144,8 +144,8 @@ expect(sut.getNewClassName).toBeDefined();
                 };
 
                 mockCompilationFn.call({transformCSS: mockTransformCSS}, mockAssets, ()=>{});
-                
-expect(mockCompilation.assets[cssFileName].source()).toEqual("-=css=-");
+
+                expect(mockCompilation.assets[cssFileName].source()).toEqual("-=css=-");
             });
         });
     });

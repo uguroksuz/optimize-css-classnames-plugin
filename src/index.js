@@ -22,7 +22,7 @@ OptimizeCssClassnamesPlugin.prototype.apply = function(compiler) {
             var transformCSS = this.transformCSS.bind(this);
 
             files.forEach(function(file) {
-                if (file === "styles.css") {
+                if (isCSSFile(file)) {
                     var asset = assets[file];
                     var source = asset.source();
                     var css = transformCSS(source);
@@ -64,8 +64,8 @@ OptimizeCssClassnamesPlugin.prototype.transformCSS = function(source) {
     return csstree.translate(ast);
 };
 
-
-
-
+function isCSSFile(fileName) {
+    return !!((fileName || '').match(/\.css$/));
+};
 
 module.exports = OptimizeCssClassnamesPlugin;
