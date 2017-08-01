@@ -1,17 +1,20 @@
-var incstr = require("incstr");
 var RawSource = require("webpack-sources/lib/RawSource");
 var csstree = require("css-tree");
+var cssClassNameGenerator = require("./idgenerator");
 
 function OptimizeCssClassnamesPlugin(options) {
     this.options = options;
     this.name = "OptimizeCssClassnamesPlugin#V1";
     this.classNameMap = new Map();
-    this.generateNextId = incstr.idGenerator({
-        alphabet: "abcdefghijklmnopqrstuvwxyz0123456789"
-    });
+    this.generateNextId = cssClassNameGenerator();
+    if (options.prefix && !options.prefix.match(/^[\w\-_]*$/gi)) {
+        throw new Error("prefix should contain only alphanumeric symbols");
+    }
 }
 
 OptimizeCssClassnamesPlugin.prototype.apply = function(compiler) {
+
+    var transformCSS = this.transformCSS.bind(this);
 
     compiler.plugin("compilation", (compilation) => {
 
@@ -19,7 +22,6 @@ OptimizeCssClassnamesPlugin.prototype.apply = function(compiler) {
         compilation.plugin("optimize-assets", function(assets, done) {
 
             var files = Object.keys(assets);
-            var transformCSS = this.transformCSS.bind(this);
 
             files.forEach(function(file) {
                 if (isCSSFile(file)) {
@@ -39,11 +41,12 @@ OptimizeCssClassnamesPlugin.prototype.apply = function(compiler) {
 
 OptimizeCssClassnamesPlugin.prototype.getNewClassName = function(className) {
     var map = this.classNameMap;
+    var prefix = this.options.prefix || "";
     var name = map.get(className);
     if (name) {
         return name;
     }
-    var newClassName = this.generateNextId();
+    var newClassName = prefix + this.generateNextId();
     map.set(className, newClassName);
     return newClassName;
 };

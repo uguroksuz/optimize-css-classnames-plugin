@@ -1,6 +1,6 @@
 {
     "name": "optimize-css-classnames-plugin",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Optmize CSS class names :: Webpack Plugin",
     "keywords": [
         "optimize",
@@ -22,8 +22,8 @@
     },
 
     "scripts": {
-        "test": "jasmine-node src/index.spec.js",
-        "tdd": "jasmine-node src/index.spec.js --autotest --watch src --color",
+        "test": "jasmine-node src/**.spec.js",
+        "tdd": "jasmine-node src/**.spec.js --autotest --watch src --color",
         "coverage": "istanbul cover --include-all-sources -x 'src/**.spec**' jasmine-node src/**.spec.js",
 
         "lint": "npm run verify",
@@ -34,7 +34,6 @@
     },
 
     "dependencies": {
-        "incstr": "1.0.3",
         "webpack-sources": "1.0.1",
         "css-tree": "csstree/csstree"
     },

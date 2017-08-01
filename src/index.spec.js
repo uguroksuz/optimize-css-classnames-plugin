@@ -18,13 +18,20 @@ describe("OptimizeCssClassnamesPlugin", () => {
     it("should define apply and getNewClassName methods", () => {
         expect(sut.apply).toBeDefined();
 
-expect(sut.getNewClassName).toBeDefined();
+        expect(sut.getNewClassName).toBeDefined();
     });
 
     it("should define plugin name", () => {
         expect(sut.name).toEqual("OptimizeCssClassnamesPlugin#V1");
     });
 
+    it("should throw error then prefix option is in wrong format", ()=> {
+        expect(()=> {
+             new OptimizeCssClassnamesPlugin({
+                prefix: "#a"
+            });
+        }).toThrow();
+    });
 
     describe("getNewClassName", ()=> {
         it("should generate new class names starting from a", ()=> {
@@ -49,6 +56,13 @@ expect(sut.getNewClassName).toBeDefined();
 
             expect(newClassName3).toEqual("a");
         });
+
+        it("should add options prefix to class Name", ()=> {
+            mockOptions.prefix = "PREFIX-";
+            var newClassName1 = sut.getNewClassName("__a");
+
+            expect(newClassName1).toEqual("PREFIX-a");
+        })
     });
 
 
@@ -132,7 +146,7 @@ expect(sut.getNewClassName).toBeDefined();
             });
 
             it("should iterate over assets and apply css for each transform", ()=> {
-                var styleString = "css";
+                var styleString = ".css{}";
                 var cssFileName = "styles.css";
                 var mockAssets = {
                     "app.js": {}
@@ -145,7 +159,7 @@ expect(sut.getNewClassName).toBeDefined();
 
                 mockCompilationFn.call({transformCSS: mockTransformCSS}, mockAssets, ()=>{});
 
-                expect(mockCompilation.assets[cssFileName].source()).toEqual("-=css=-");
+                expect(mockCompilation.assets[cssFileName].source()).toEqual(".css{}");
             });
         });
     });
