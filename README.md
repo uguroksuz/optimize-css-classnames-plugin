@@ -65,6 +65,6 @@ module.exports = {
 }
 ```
 
-## Configuration Examples:
-* [Jquery](https://github.com/vreshch/optimize-css-classnames-examples/tree/master/1)
+## Configuratiob Examples:
+* [Jquery](https://github.com/vreshch/optimize-css-classnames-examples/tree/master/src/1-jquery)
 * [Angular 1.5](https://github.com/vreshch/optimize-css-classnames-examples/tree/master/2)
