@@ -32,13 +32,15 @@ describe("OptimizeCssClassnamesPlugin", () => {
             });
         }).toThrow();
     });
+
     it("should throw error then ignore option is in wrong format", ()=> {
         expect(()=> {
             new OptimizeCssClassnamesPlugin({
-                ignore: 'class'
+                ignore: "class"
             });
         }).toThrow();
-        expect(()=> {
+        
+expect(()=> {
             new OptimizeCssClassnamesPlugin({
                 ignore: []
             });

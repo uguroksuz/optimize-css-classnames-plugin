@@ -45,10 +45,10 @@ OptimizeCssClassnamesPlugin.prototype.apply = function(compiler) {
 OptimizeCssClassnamesPlugin.prototype.getNewClassName = function(className) {
     if (this.options.ignore) {
         var isInIgnoreList = this.options.ignore.some(function(ignoreClass) {
-             if (typeof ignoreClass === 'string') {
+             if (typeof ignoreClass === "string") {
                 return ignoreClass === className;
              }
-             if (typeof ignoreClass === 'object' && ignoreClass.constructor.name === "RegExp") {
+             if (typeof ignoreClass === "object" && ignoreClass.constructor.name === "RegExp") {
                 return className.match(ignoreClass);
              }
         });
