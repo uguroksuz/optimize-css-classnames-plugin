@@ -59,7 +59,11 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin("styles.css"),
         new OptimizeCSSClassnamesPlugin({
-            prefix: '_'
+            prefix: '_',
+            ignore: [
+              'blink-class',
+              /^e2e-/
+            ]
         })
     ]
 }

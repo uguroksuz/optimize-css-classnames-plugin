@@ -10,6 +10,9 @@ function OptimizeCssClassnamesPlugin(options) {
     if (options.prefix && !options.prefix.match(/^[\w\-_]*$/gi)) {
         throw new Error("prefix should contain only alphanumeric symbols");
     }
+    if (options.ignore && !Array.isArray(options.ignore)) {
+        throw new Error("ignore option should be an Array of strings or Regex");
+    }
 }
 
 OptimizeCssClassnamesPlugin.prototype.apply = function(compiler) {
@@ -40,6 +43,19 @@ OptimizeCssClassnamesPlugin.prototype.apply = function(compiler) {
 };
 
 OptimizeCssClassnamesPlugin.prototype.getNewClassName = function(className) {
+    if (this.options.ignore) {
+        var isInIgnoreList = this.options.ignore.some(function(ignoreClass) {
+             if (typeof ignoreClass === 'string') {
+                return ignoreClass === className;
+             }
+             if (typeof ignoreClass === 'object' && ignoreClass.constructor.name === "RegExp") {
+                return className.match(ignoreClass);
+             }
+        });
+        if (isInIgnoreList) {
+            return className;
+        }
+    }
     var map = this.classNameMap;
     var prefix = this.options.prefix || "";
     var name = map.get(className);

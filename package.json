@@ -1,6 +1,6 @@
 {
     "name": "optimize-css-classnames-plugin",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Optmize CSS class names :: Webpack Plugin",
     "keywords": [
         "optimize",

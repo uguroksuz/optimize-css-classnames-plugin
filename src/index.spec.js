@@ -32,6 +32,18 @@ describe("OptimizeCssClassnamesPlugin", () => {
             });
         }).toThrow();
     });
+    it("should throw error then ignore option is in wrong format", ()=> {
+        expect(()=> {
+            new OptimizeCssClassnamesPlugin({
+                ignore: 'class'
+            });
+        }).toThrow();
+        expect(()=> {
+            new OptimizeCssClassnamesPlugin({
+                ignore: []
+            });
+        }).not.toThrow();
+    });
 
     describe("getNewClassName", ()=> {
         it("should generate new class names starting from a", ()=> {
@@ -62,7 +74,25 @@ describe("OptimizeCssClassnamesPlugin", () => {
             var newClassName1 = sut.getNewClassName("__a");
 
             expect(newClassName1).toEqual("PREFIX-a");
-        })
+        });
+
+        it("should ignore class name string listed in ignore options", ()=> {
+            mockOptions.ignore = [
+                "ignore-this"
+            ];
+            var newClassName1 = sut.getNewClassName("ignore-this");
+
+            expect(newClassName1).toEqual("ignore-this");
+        });
+
+        it("should ignore class name regex listed in ignore options", ()=> {
+            mockOptions.ignore = [
+                /^e2e-/
+            ];
+            var newClassName1 = sut.getNewClassName("e2e-data-class");
+
+            expect(newClassName1).toEqual("e2e-data-class");
+        });
     });
 
 
