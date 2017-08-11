@@ -1,8 +1,8 @@
 # Optimize CSS Classnames
 
-[![codecov](https://codecov.io/gh/vreshch/optimize-css-classnames-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/vreshch/optimize-css-classnames-plugin)
+[![codecov](https://codecov.io/gh/vreshch/optimize-css-classnames-html/branch/master/graph/badge.svg)](https://codecov.io/gh/vreshch/optimize-css-classnames-html)
 [![Build Status](https://travis-ci.org/vreshch/optimize-css-classnames-plugin.svg?branch=master)](https://travis-ci.org/vreshch/optimize-css-classnames-plugin)
-
+[![codecov](https://codecov.io/gh/vreshch/optimize-css-classnames-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/vreshch/optimize-css-classnames-plugin)
 
 Webpack plugin: Optimize css class names:
 
