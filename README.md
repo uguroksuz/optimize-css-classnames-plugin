@@ -1,6 +1,6 @@
 # Optimize CSS Classnames
 
-[![codecov](https://codecov.io/gh/vreshch/optimize-css-classnames-html/branch/master/graph/badge.svg)](https://codecov.io/gh/vreshch/optimize-css-classnames-html)
+[![npm version](https://badge.fury.io/js/optimize-css-classnames-plugin.svg)](https://badge.fury.io/js/optimize-css-classnames-plugin)
 [![Build Status](https://travis-ci.org/vreshch/optimize-css-classnames-plugin.svg?branch=master)](https://travis-ci.org/vreshch/optimize-css-classnames-plugin)
 [![codecov](https://codecov.io/gh/vreshch/optimize-css-classnames-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/vreshch/optimize-css-classnames-plugin)
 
